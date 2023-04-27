@@ -37,7 +37,7 @@ class Program
         return numSquare;
     }
 
-    static void DisplayResult(string name, int square)
+    static void DisplayResult(string name, int numSquare)
     {
         Console.WriteLine($"Your name is: {name} and Your number squared is: {numSquare}");
     }
