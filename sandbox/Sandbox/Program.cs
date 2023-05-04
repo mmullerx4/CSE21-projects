@@ -15,14 +15,13 @@ namespace Giraffe
          characterAge = 35;
          
 
-         Console.WriteLine("The once was a man named George " + characterName); //can concatenate
-         Console.WriteLine($"He was " + characterName + " years old");
+         Console.WriteLine("The once was a man named " + characterName); //can concatenate
+         Console.WriteLine($"He was " + characterAge + " years old");
 
          characterName = "Mike"; //can change the name at anytime
-         Console.WriteLine("He liked the name {characterName}"); //can use this easier version
+         Console.WriteLine($"He liked the name {characterName}"); //can use this easier version
          Console.WriteLine($"But he didn't like being {characterAge}");
          
-         Console.ReadLine();
         }
     }
 }
