@@ -31,7 +31,7 @@ class Entry
 
     string userResponse = Console.ReadLine();
 
-    int entryDate = 
+    DateTime.Now.ToString("dd/MM/yy");
     }
 
     public void saveEntry();

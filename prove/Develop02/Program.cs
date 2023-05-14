@@ -1,5 +1,5 @@
 using System;
-
+using System.Collections.Generic;
 class Program
 {
     static void Main(string[] args)
@@ -39,6 +39,20 @@ class Program
                 
             }
 
-    }
+        }
+    //How does this apply? This probably goes in the journal file
+        Public static List<Entry> ReadFromFile()
+        {
+            List <Entry> Entry = new List<Entry>();
+            string filename = "Entry.csv";
+            string [] lines = System.IO.ReadAllLines(filename);
+
+            foreach (string line in lines)
+            {
+                Console.Write(line);
+            }
+            
+            return Entry;
+        }
     }
 }
