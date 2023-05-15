@@ -3,19 +3,10 @@ using System;
 class Entry
 {
     string randomPrompt;
-    string UserResponse;
-    int entryDate;
-    public string writeEntry() {
-    //Getting a random value with this code example from stack overflow
-    //int value1 = 3;
-    //int anotherValue = 5;
-    //int value2 = 1;
-
-    //int[] selectableInts = new int[3] { value1, anotherValue, value2 };
-
-    //Random rand = new Random();
-
-    //int randomValue = selectableInts[rand.Next(0, selectableInts.Length)];
+    string userResponse; //creating the variable
+    string entryDate;
+    public string writeEntry() 
+    {
 
     string[] randomPrompt = new string[5] { 
         "Who was the most interesting person I interacted with today?",
@@ -26,14 +17,18 @@ class Entry
         };
 
     Random rand = new Random();
-    string randomValue = randomPrompt[rand.Next(0, randomPrompt.Length)];
+    string randomValue = randomPrompt[rand.Next(0, randomPrompt.Length)]; //storing a variable based on someone else's code
     Console.WriteLine(randomPrompt);
 
-    string userResponse = Console.ReadLine();
+    userResponse = Console.ReadLine(); //not creating the variable but referencing the variable
 
-    DateTime.Now.ToString("dd/MM/yy");
-    }
-
-    public void saveEntry();
+    DateTime theCurrentTime = DateTime.Now; 
+    entryDate = theCurrentTime.ToShortDateString();                                       
+    //green is a class or built-in class, lt. blue is variable name or built-in variable
+    //"theCurrentTime" variable can be replace with any name. ".Now" is attribute
+    //"DateTime" is someone else's (MS?) code.
+    //lt. yellow are methods or built-in method
     
+    }
+   
 }

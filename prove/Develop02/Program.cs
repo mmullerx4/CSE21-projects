@@ -14,45 +14,37 @@ class Program
 
             if (choice == 1)
             {
+                Entry entry = new Entry(); //class name then variable and creation of class & creating an entry
                 
-
+                entry.writeEntry(); //calling the writeEntry method from entry.cs
 
             }
 
             else if (choice == 2)
             {
+                Journal journal = new Journal(); // class name, variable name and creation of class and Journal
+
+                journal.displayJournal();     
                 
             }
 
             else if (choice == 3)
             {
-                
+                Journal.saveJournal();
             }
 
             else if (choice == 4)
             {
-                
+                journal.loadJournal();
             }
 
             else
             {
-                
+               Console.Write("Thank you for journaling! Have a great day!"); 
             }
 
         }
     //How does this apply? This probably goes in the journal file
-        Public static List<Entry> ReadFromFile()
-        {
-            List <Entry> Entry = new List<Entry>();
-            string filename = "Entry.csv";
-            string [] lines = System.IO.ReadAllLines(filename);
-
-            foreach (string line in lines)
-            {
-                Console.Write(line);
-            }
-            
-            return Entry;
-        }
+        
     }
 }
