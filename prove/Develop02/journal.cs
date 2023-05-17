@@ -1,32 +1,37 @@
 using System;
 using System.IO;
 
-class Journal
+class Journal //blueprint on how to create Journal
 {
     string journalFileName; //declaring variable
-    string [] lines = System.IO.File.ReadAllLines(journalFileName);
-    List<Entry> entryCollection; //declaring list
-   public List<Entry> displayJournal() //creating a method (an action)
+    
+    public List<Entry> entryCollection = new List<Entry>();//declaring list a initializing with the " = ????". () for a new class
+   public void displayJournal() //creating a method(an action) from List<Entry> but no return
    { 
         
-        foreach (string line in lines) //for each line display on screen
+        foreach (Entry entry in entryCollection) //In class Entry for each line(entry) in entryCollection
         {
-            string[] parts = line.Split(",");
-
-            //string firstName = parts[0];
-            //string lastName = parts[1];
+            
+            Console.WriteLine(entry._entryDate); //displaying date
+            Console.WriteLine(entry._randomValue);
+            Console.WriteLine(entry._userResponse);
+            
         }
-        
-        //return Entry;
+          
 
    }
 
-   public string saveJournal()
+   public void saveJournal()
    {
        string fileName = "myFile.txt";
-       using (StreamWriter outputFile = new StreamWriter(filename))
+       using (StreamWriter outputFile = new StreamWriter(fileName))//StreamWriter creates a file
        {
-        outputFile.WriteLine("This will be the first line in the file.");
+        foreach (Entry entry in entryCollection){
+            outputFile.WriteLine(entry._entryDate); //writing these to the file
+            outputFile.WriteLine(entry._randomValue);
+            outputFile.WriteLine(entry._userResponse);  
+        }
+        
 
        }
 
@@ -34,12 +39,12 @@ class Journal
    }
    
 
-   public string loadJournal() //just loading
+   public void loadJournal() //just loading
    {
         List <Entry> Entry = new List<Entry>(); //adding a new list entry to a list of entries.
-        string Console.Write("What is the name of your file? ");
+        Console.Write("What is the name of your file? ");
         string filename = Console.ReadLine(); // storing user's input in "filename" variable 
-        string [] lines = System.IO.ReadAllLines(filename); //storing all lines in "lines" array. IO is Input/Output
+        string [] lines = System.IO.File.ReadAllLines(filename); //storing all lines in "lines" array. IO is Input/Output
                         // must have "using System.IO;" at the top of this file.
 
    }
