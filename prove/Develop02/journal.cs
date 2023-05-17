@@ -4,16 +4,20 @@ using System.IO;
 class Journal
 {
     string journalFileName; //declaring variable
+    string [] lines = System.IO.File.ReadAllLines(journalFileName);
     List<Entry> entryCollection; //declaring list
    public List<Entry> displayJournal() //creating a method (an action)
    { 
         
         foreach (string line in lines) //for each line display on screen
         {
-            Console.Write(line);
+            string[] parts = line.Split(",");
+
+            //string firstName = parts[0];
+            //string lastName = parts[1];
         }
         
-        return Entry;
+        //return Entry;
 
    }
 
