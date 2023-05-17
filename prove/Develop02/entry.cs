@@ -2,21 +2,22 @@ using System;
 
 class Entry
 {
-    public string _randomValue;
-    public string _userResponse; //creating the variable
+    public string _randomValue;  //prompt from random prompt
+    public string _userResponse; //creating the variable for user response
     public string _entryDate;
 
     
     public void writeEntry() 
     {
 
-    string[] _randomPrompt = new string[5] { 
+    string[] _randomPrompt = new string[5] {             //creating an array for random prompt
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
         "How did I see the hand of the Lord in my life today?",
         "What did I learn today?",
         "What would I have done better today?"
         };
+
 
     Random rand = new Random();
     _randomValue = _randomPrompt[rand.Next(0, _randomPrompt.Length)]; //storing a variable based on someone else's code

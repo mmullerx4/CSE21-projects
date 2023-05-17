@@ -20,23 +20,17 @@ class Program
                 
                 entry.writeEntry(); //calling the writeEntry method from entry.cs
                 journal.entryCollection.Add(entry); //adding the entry to the journal
-                
-
             }
 
             else if (choice == 2)
-            {
-                
-
-                journal.displayJournal(); 
-               
-                
+            { 
+                journal.displayJournal();   //display to screen 
             }
 
             else if (choice == 3)
             {
                 journal.saveJournal();
-                Console.WriteLine("You have saved your entry to your journal.");
+                Console.WriteLine("You have saved your entry to your journal."); 
             }
 
             else if (choice == 4)
@@ -50,7 +44,6 @@ class Program
             }
 
         }
-    //How does this apply? This probably goes in the journal file
         
     }
 }
