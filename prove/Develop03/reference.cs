@@ -17,7 +17,7 @@ class Reference
         }
         else
         {
-            Console.WriteLine($"{_book} {_chapter}:{_addVerse}");
+            Console.WriteLine($"{_book} {_chapter}:{_verse}");
         }
     }
 
