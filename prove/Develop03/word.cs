@@ -2,7 +2,7 @@ using System;
 
 class Word{
    string _word;
-   bool _isHidden = True;
+   bool _isHidden = false;
 
    
    public string randomHide()
