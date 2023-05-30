@@ -8,6 +8,29 @@ class Reference
 
     private string _addVerse;
 
+
+//add constructors to set up the class to be ready
+
+//create constructor with three parameters
+  public Reference(string book, string chapter, string verse)
+   {
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _addVerse = "";
+   }
+    
+    //the same constructor with four parameters
+   public Reference(string book, string chapter, string verse, string addVerse)
+   {
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _addVerse= addVerse;
+   }
+
+
+//Then add methods
     public void displayCombine()
     {
         
@@ -20,16 +43,6 @@ class Reference
             Console.WriteLine($"{_book} {_chapter}:{_verse}");
         }
     }
-
-    //add the constructor
-    
-   public Reference()
-   {
-    _book = "1 Nephi";
-    _chapter = "3";
-    _verse = "7";
-    _addVerse= "8";
-
-   }
-
+  
+  
 }

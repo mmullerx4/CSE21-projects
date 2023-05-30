@@ -1,35 +1,48 @@
 using System;
 
 class Word{
-   string _word;
-   bool _isHidden = false;
+   // Attributes (variables) (fields)
+   private string _word;
+   private bool _isHidden;
 
-   
-   public string randomHide()
+   // (Access Type) (Name(Paramters))
+   //public Word(){}   //this would be the default constructor
+   public Word(string word)
    {
-      StringContent[] _word = "And|it|came|to|pass|".Split('|');
-      Random rnd = new Random();
-      string word1 = _word[rnd.Next(_word.Length)];
-
-     //foreach(char c in _word);
-     //Random r = new Random( );
-     //index = r.Next( _word.Count ); //
-     // string randomString = _word[ index ];
-     //string[] mystrings = "apple|orange|mayo|fruit|dog".Split('|');
-      //Random rnd = new Random();
-      //string blah1 = mystrings[rnd.Next(mystrings.Length)];
-      //string blah2 = mystrings[rnd.Next(mystrings.Length)];
-      //string sentence = "here i am " + blah1 + " result chosen from mystring was " + blah2
-
-   
-     
-      
+      _word = word;
+      _isHidden = false; //false because starts out as not hidden
    }
 
-   public bool isHidden()
+   // (Access Type) (Return Type) (Name(Paramters))
+   public bool GetIsHidden() // Getter for _isHidden
    {
-      
-
+      return _isHidden; //return where ever called from
    }
-   
+
+   // Setter to set _isHidden to true
+   public bool SetIsHidden()
+   {
+      _isHidden = true;
+   }
+
+
+   // DisplayWord
+   // Check if the word is hidden
+   // if it is hidden
+   //    loop through te letters in the  word (foreach)
+   //          print out "_"
+   // else print out word
+   public void DisplayWord()
+   {
+      if (_isHidden)
+      {
+         foreach (char letter in _word)
+         {
+            Console.Write("_");     
+         }
+      } else
+      {
+         Console.Write(_word);
+      }
+   }
 }
