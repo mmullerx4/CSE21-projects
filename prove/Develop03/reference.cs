@@ -30,7 +30,7 @@ class Reference
    }
 
 
-//Then add methods
+//Then add method
     public void displayCombine()
     {
         

@@ -20,7 +20,7 @@ class Word{
    }
 
    // Setter to set _isHidden to true
-   public bool SetIsHidden()
+   public void SetIsHidden() //setters are always void - they do not return - just setting
    {
       _isHidden = true; //changing isHidden to true
    }
@@ -44,5 +44,10 @@ class Word{
       {
          Console.Write(_word);
       }
+   }
+
+   public string GetWord()
+   {
+      return _word;
    }
 }
