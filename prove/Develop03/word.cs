@@ -22,7 +22,7 @@ class Word{
    // Setter to set _isHidden to true
    public bool SetIsHidden()
    {
-      _isHidden = true;
+      _isHidden = true; //changing isHidden to true
    }
 
 
