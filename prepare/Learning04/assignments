@@ -1,0 +1,18 @@
+using System;
+
+class Assignments
+{
+    private string _name;
+    private string _topic; //"Fractions"
+
+
+    //build constructor
+
+
+    //build methods
+    
+    public void GetSummary()
+    {
+
+    }
+}
