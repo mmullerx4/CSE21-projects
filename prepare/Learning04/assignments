@@ -7,12 +7,20 @@ class Assignments
 
 
     //build constructor
+    //access type, parameters
+    public Assignments(string _name, string _topic)
+    {
+        this._name = _name;
+        this._topic = _topic;
+        
+    }
 
 
     //build methods
     
-    public void GetSummary()
+    public string GetSummary()
     {
-
+        // Interpolate a string $""
+        return $"{_name} - {_topic}";
     }
 }
