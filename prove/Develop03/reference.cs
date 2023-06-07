@@ -14,7 +14,7 @@ class Reference
 //create constructor with three parameters
   public Reference(string book, string chapter, string verse)
    {
-        _book = book;
+        _book = book; //setting up to be used (values plugged in) in program.cs
         _chapter = chapter;
         _verse = verse;
         _addVerse = "";
