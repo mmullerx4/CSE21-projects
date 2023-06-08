@@ -33,9 +33,9 @@ class Activity
 
     }
 
-    pubic getduration()
+    public int getDuration()
     {
-        Console.
+        return _duration;
 
     }
 
