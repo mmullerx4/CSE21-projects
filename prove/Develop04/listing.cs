@@ -2,15 +2,19 @@ using System;
 
 class Listing
 {
-    private string _listingActivityName;
-    private List<Listing> _list = new List<Listing>(); //using the class Listing as my type in <>
-    private Random prompt = new Random();
+    
+    private List<string> _list = new List<string>(); //using the class Listing as my type in <>
+    private Random rand = new Random();
+
+    private List<string> _prompt = new List<string>()
+    {
+        x, x, x, x
+    }
 
     //construtor
-    public Listing(string listingActivityName, List<> list)  ///?????
+    public Listing(string activityName)  : base(activityName)
     {
         _listingActivityName = listingActivityName;
-        _list = list;
 
     }
 
@@ -19,10 +23,15 @@ class Listing
 //prompt to keep listing items until time up
 //display items back to user
 
-    public void randomPrompt()
+    get userInput()
     {
-        Listing promptObj = _list[prompt.Next(_list.Count)];
 
+    }
+    
+    public void randomPrompt()
+    {   //my list type is a string. And it is a random string from the list
+        string promptObj = _list[rand.Next(_list.Count)];
+        
     }
 
     public void displayList()

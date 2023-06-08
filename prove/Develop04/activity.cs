@@ -6,27 +6,36 @@ class Activity
     private string _endingMessage;
     private string _menu;
     private int _duration;
+    private string _activityName;
 
-    public Activity(string startingMsg, string endingMsg, string menu, int duration)
+    public Activity(string activityName, string startingMsg, string endingMsg, int duration)
     {
+        _activityName = activityName;
         _startingMessage = startingMsg;
         _endingMessage = endingMsg;
-        _menu = menu;
         _duration = duration;
+    
     }
 
-    public void displayMenu()
+    public void getName()
     {
-        Console.WriteLine(_menu);
+
     }
+
 
     public void pauseSpinner()
     {
 
     }
 
-    public void pauseCounter()
+    public void getPauseCounter()
     {
+
+    }
+
+    pubic getduration()
+    {
+        Console.
 
     }
 

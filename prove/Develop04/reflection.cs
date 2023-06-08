@@ -2,16 +2,14 @@ using System;
 
 class Reflection
 {
-    private string _reflectionName;
-    
     private string _randomPrompt;
     private string _randomQuestion;
     
 
     //constructor
-    public Reflection(string reflectionName)
+    public Reflection(string activityName) : base(activityName)
     {
-        _reflectionName = reflectionName;
+        _activityName = activityName;
     }
 
 
