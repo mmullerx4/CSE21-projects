@@ -26,7 +26,7 @@ class Reflection : Activity
     //constructor
     public Reflection(string activityName, string startingMsg, string endingMsg, int duration) : base(activityName, startingMsg, endingMsg, duration)
     {
-       //info not needed here - we don't need plug in any parameters... already there in attribute above
+        //info not needed here - we don't need plug in any parameters... already there in attribute above
     }
 
 
@@ -39,19 +39,25 @@ class Reflection : Activity
         //my list type is a string. And it is a random string from the list
         string promptObj = _prompts[rand.Next(_prompts.Count)]; //pulling a random prompt
         Console.WriteLine(promptObj); //then displaying that promp
-    }
-
-    public void run() //create another method for timing after prompt and question
-    {
 
     }
 
-    public void randomQuestion()
-    {
+
+        DateTime futureTime = getDuration(); //put inside a method
+               
+                while (DateTime.Now <= futureTime)
+                {
+
+                }
+        
+        public void randomQuestion()
+        {
         //my list type is a string. And it is a random string from the list
         string questionObj = _question[rand.Next(_question.Count)];
         Console.WriteLine(questionObj);
-    }
+        getPauseSpinner();
+        }
 
+}
 
 }

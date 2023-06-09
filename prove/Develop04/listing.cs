@@ -1,20 +1,23 @@
 using System;
 
-class Listing
+class Listing : Activity
 {
     
-    private List<string> _list = new List<string>(); //using the class Listing as my type in <>
     private Random rand = new Random();
 
-    private List<string> _prompt = new List<string>()
+    private List<string> _prompts = new List<string>()
     {
-        x, x, x, x
-    }
+        "Who are people that you appreciate?",
+        "What are personal strengths of yours?",
+        "Who are people that you have helped this week?",
+        "When have you felt the Holy Ghost this month?",
+        "Who are some of your personal heroes?"
+    };
 
     //construtor
-    public Listing(string activityName)  : base(activityName)
+    public Listing(string activityName, string startingMsg, string endingMsg, int duration)  : base(activityName, startingMsg, endingMsg, duration)
     {
-        _listingActivityName = listingActivityName;
+        //info not needed here - we don't need plug in any parameters... already there in attribute above
 
     }
 
@@ -23,19 +26,33 @@ class Listing
 //prompt to keep listing items until time up
 //display items back to user
 
-    get userInput()
-    {
-
-    }
+         
+        
+            
+    
     
     public void randomPrompt()
     {   //my list type is a string. And it is a random string from the list
-        string promptObj = _list[rand.Next(_list.Count)];
-        
+        string promptObj = _prompts[rand.Next(_prompts.Count)];
+        getPauseCounter();      
     }
+
+    public void userInput()
+            {
+                DateTime futureTime = getDuration();
+               
+                while (DateTime.Now <= futureTime)
+                {
+
+                }
+            
+                getPauseCounter();
+                Console.ReadLine();
+            } 
 
     public void displayList()
     {
+        Console.WriteLine("You have made {} amount of entries.");
 
     }
 

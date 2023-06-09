@@ -14,16 +14,17 @@ class Breathing : Activity
 
     public void alternateBreath()
     {
-        DateTime startTime = DateTime.Now; //declaring the current time
-        DateTime futureTime = startTime.AddSeconds(getDuration()); //Declaring the future by taking the current time and adding the user input (getDuration)
-        
-        while (DateTime.Now <= futureTime) 
-        {
-        Console.Write("Breath in..."); //declare parameters in Activity
-        getPauseCounter();
-        Console.Write("Breath out...");
-        getPauseCounter();
-        }  
+        DateTime futureTime = getDuration();
+               
+                while (DateTime.Now <= futureTime)
+                {
+                    Console.Write("Breath in..."); //declare parameters in Activity
+                    getPauseCounter();
+                    Console.Write("Breath out...");
+                    getPauseCounter();
+
+                } 
+          
 
     }
 
