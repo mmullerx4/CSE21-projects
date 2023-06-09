@@ -24,9 +24,11 @@ class Reflection : Activity
     };
 
     //constructor
-    public Reflection(string activityName, string startingMsg, string endingMsg, int duration) : base(activityName, startingMsg, endingMsg, duration)
+    public Reflection(string startingMsg, string endingMsg) : base(startingMsg, endingMsg)
     {
-        //info not needed here - we don't need plug in any parameters... already there in attribute above
+       _activityName = "reflection";
+       _activityDescription = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+
     }
 
 
@@ -36,28 +38,28 @@ class Reflection : Activity
 
     public void randomPrompt()
     {
+        getStartMsg();
         //my list type is a string. And it is a random string from the list
         string promptObj = _prompts[rand.Next(_prompts.Count)]; //pulling a random prompt
         Console.WriteLine(promptObj); //then displaying that promp
-
     }
 
-
-        DateTime futureTime = getDuration(); //put inside a method
-               
-                while (DateTime.Now <= futureTime)
-                {
-
-                }
-        
         public void randomQuestion()
         {
-        //my list type is a string. And it is a random string from the list
-        string questionObj = _question[rand.Next(_question.Count)];
-        Console.WriteLine(questionObj);
-        getPauseSpinner();
+            
+            DateTime futureTime = getDuration(_duration);
+
+            while (DateTime.Now <= futureTime)
+            {
+                 //my list type is a string. And it is a random string from the list
+                string questionObj = _question[rand.Next(_question.Count)];
+                Console.WriteLine(questionObj);
+                getPauseSpinner();
+                
+            }
+            getEndMsg();
+           
         }
 
 }
 
-}

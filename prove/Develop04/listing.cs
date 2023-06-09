@@ -15,20 +15,17 @@ class Listing : Activity
     };
 
     //construtor
-    public Listing(string activityName, string startingMsg, string endingMsg, int duration)  : base(activityName, startingMsg, endingMsg, duration)
+    public Listing(string startingMsg, string endingMsg)  : base(startingMsg, endingMsg)
     {
-        //info not needed here - we don't need plug in any parameters... already there in attribute above
+        _activityName = "listing";
+        _activityDescription = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
 
     }
 
 // This file needs to select a random prompt to show user
 //(countdown after prompt)
 //prompt to keep listing items until time up
-//display items back to user
-
-         
-        
-            
+//display items back to user    
     
     
     public void randomPrompt()
@@ -38,17 +35,10 @@ class Listing : Activity
     }
 
     public void userInput()
-            {
-                DateTime futureTime = getDuration();
-               
-                while (DateTime.Now <= futureTime)
-                {
+    {
 
-                }
+    }
             
-                getPauseCounter();
-                Console.ReadLine();
-            } 
 
     public void displayList()
     {
