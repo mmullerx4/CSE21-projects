@@ -24,7 +24,7 @@ class Reflection : Activity
     };
 
     //constructor
-    public Reflection(string startingMsg, string endingMsg) : base(startingMsg, endingMsg)
+    public Reflection()
     {
        _activityName = "reflection";
        _activityDescription = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
@@ -42,19 +42,20 @@ class Reflection : Activity
         //my list type is a string. And it is a random string from the list
         string promptObj = _prompts[rand.Next(_prompts.Count)]; //pulling a random prompt
         Console.WriteLine(promptObj); //then displaying that promp
+        getPauseCounter(15);
+        randomQuestion();
     }
 
         public void randomQuestion()
         {
-            
             DateTime futureTime = getDuration(_duration);
 
             while (DateTime.Now <= futureTime)
             {
                  //my list type is a string. And it is a random string from the list
-                string questionObj = _question[rand.Next(_question.Count)];
-                Console.WriteLine(questionObj);
-                getPauseSpinner();
+                string questionObj = _question[rand.Next(_question.Count)]; //random question
+                Console.WriteLine(questionObj); //display the random question to user
+                getPauseSpinner(15); //spin for several seconds
                 
             }
             getEndMsg();

@@ -2,20 +2,11 @@ using System;
 
 class Activity
 {
-    protected string _startingMessage;
-    protected string _endingMessage;
     protected int _duration;
     protected string _activityName;
     protected string _activityDescription;
 
-    public Activity(string startingMsg, string endingMsg)
-    {
-        
-        _startingMessage = startingMsg;
-        _endingMessage = endingMsg;
-
-    }
-
+    //using default constructor - no parameters & no body
     public void getStartMsg()
     {
         Console.WriteLine($"Welcome to the {_activityName} activity.");
@@ -26,11 +17,11 @@ class Activity
 
         Console.Clear(); //clears the screen as program runs as example in video
         Console.WriteLine("Get ready...");
-        getPauseSpinner();
+        getPauseSpinner(5);
     }
 
 
-    public void getPauseSpinner()
+    public void getPauseSpinner(int duration)
     {
         DateTime futureTime = getDuration(5);
         List<string> animationStrings = new List<string>(); //creating a list variable animationStrings
@@ -61,11 +52,11 @@ class Activity
     public void getPauseCounter(int duration)
     {
         //for (int i=5; i>0; i--)
-        for (int i = duration; i > 0; i--)
+        for (int i = duration; i > 1; i--) 
         {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
+            Console.Write(i.ToString().PadLeft(2)); //conver to string & then set a padding...set how many spaces
+            Thread.Sleep(1000);                     //was getting error with the "/b /b" or variation double.
+            Console.Write("\b\b"); //getting rid of print in the space
         }
 
     }
@@ -73,9 +64,9 @@ class Activity
     public void getEndMsg()
     {
         Console.WriteLine("Well done!");
-        getPauseSpinner();
+        getPauseSpinner(5);
         Console.WriteLine($"You have completed {_duration} seconds of the {_activityName} activity.");
-        getPauseSpinner();
+        getPauseSpinner(5);
     }
 
 

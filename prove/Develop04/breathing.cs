@@ -7,8 +7,9 @@ class Breathing : Activity
     //alternating messages of breath in and breathe out with a pause until time up
 
 
-    public Breathing(string startingMsg, string endingMsg) : base(startingMsg, endingMsg)
+    public Breathing()
     {
+        //give the attributes a value to retrieve
         _activityName = "Breathing";
         _activityDescription = "relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }

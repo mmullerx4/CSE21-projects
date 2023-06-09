@@ -15,7 +15,7 @@ class Listing : Activity
     };
 
     //construtor
-    public Listing(string startingMsg, string endingMsg)  : base(startingMsg, endingMsg)
+    public Listing()
     {
         _activityName = "listing";
         _activityDescription = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
@@ -30,12 +30,27 @@ class Listing : Activity
     
     public void randomPrompt()
     {   //my list type is a string. And it is a random string from the list
-        string promptObj = _prompts[rand.Next(_prompts.Count)];
-        getPauseCounter();      
+          
+        getStartMsg();
+        DateTime futureTime = getDuration(_duration);
+
+        while (DateTime.Now <= futureTime)
+        {
+            //my list type is a string. And it is a random string from the list
+            string questionObj = _prompts[rand.Next(_prompts.Count)];
+            Console.WriteLine(questionObj);
+            getPauseCounter(5);
+            
+        }    
+        getEndMsg();
     }
 
+    string input = "";
+    int counter = 0;
     public void userInput()
     {
+        input = Console.ReadLine();
+        counter ++;
 
     }
             
@@ -45,6 +60,5 @@ class Listing : Activity
         Console.WriteLine("You have made {} amount of entries.");
 
     }
-
 
 }

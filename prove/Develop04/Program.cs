@@ -7,36 +7,38 @@ class Program
     //minimal information here - just say run the program in this file
     static void Main(string[] args)
     {
-        Console.WriteLine(
-        "1. Start breathing activity\n 2. Start reflecting activity\n 3. Start Listing activity\n 4. Quit");
-        Console.WriteLine("Select a choice from the menu: ");
-
-        int menuSelection = int.Parse(Console.ReadLine());
-
-
-        if (menuSelection == 1)
+        while(true)
         {
-            
-        }
+            Console.WriteLine(
+            "1. Start breathing activity\n 2. Start reflecting activity\n 3. Start Listing activity\n 4. Quit");
+            Console.WriteLine("Select a choice from the menu: ");
 
-        else if (menuSelection == 2)
-        {
-            
-        }
-        else if (menuSelection == 3)
-        {
-            
-        }
-        else if (menuSelection == 4)
-        {
-            
-        }
-        else
-        {
-            
-        }
+            int menuSelection = int.Parse(Console.ReadLine()); //capturing the user's choice
 
+
+            if (menuSelection == 1)
+            {
+                Breathing breathing = new Breathing(); //creating a new object to use to call the method with
+                breathing.alternateBreath(); //calling the method from breathing.cs
+            }
+
+            else if (menuSelection == 2)
+            {
+                Reflection reflection = new Reflection();
+                reflection.randomPrompt();
+            }
+            else if (menuSelection == 3)
+            {
+                Listing listing = new Listing();
+                listing.randomPrompt();
+            }
+
+            else
+            {
+                break; //when the user chooses 4 or anything else the loop breaks or quits
+            }
+
+        }
     }
-
      
 }
