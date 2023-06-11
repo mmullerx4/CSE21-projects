@@ -69,5 +69,4 @@ class Activity
         getPauseSpinner(5);
     }
 
-
 }

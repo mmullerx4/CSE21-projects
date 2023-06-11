@@ -27,7 +27,7 @@ class Reflection : Activity
     public Reflection()
     {
        _activityName = "reflection";
-       _activityDescription = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
+       _activityDescription = "reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
 
     }
 
@@ -41,8 +41,8 @@ class Reflection : Activity
         getStartMsg();
         //my list type is a string. And it is a random string from the list
         string promptObj = _prompts[rand.Next(_prompts.Count)]; //pulling a random prompt
-        Console.WriteLine(promptObj); //then displaying that promp
-        getPauseCounter(15);
+        Console.WriteLine(promptObj); //then displaying that prompt
+        getPauseCounter(15); //15 second countdown before moving on
         randomQuestion();
     }
 

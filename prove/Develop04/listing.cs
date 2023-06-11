@@ -2,7 +2,7 @@ using System;
 
 class Listing : Activity
 {
-    
+    //Attributes
     private Random rand = new Random();
 
     private List<string> _prompts = new List<string>()
@@ -18,7 +18,7 @@ class Listing : Activity
     public Listing()
     {
         _activityName = "listing";
-        _activityDescription = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+        _activityDescription = "reflect on the good things in your life by having you list as many things as you can in a certain area.";
 
     }
 
@@ -27,38 +27,36 @@ class Listing : Activity
 //prompt to keep listing items until time up
 //display items back to user    
     
-    
+    //methods
     public void randomPrompt()
-    {   //my list type is a string. And it is a random string from the list
-          
+    {   
         getStartMsg();
-        DateTime futureTime = getDuration(_duration);
-
-        while (DateTime.Now <= futureTime)
-        {
-            //my list type is a string. And it is a random string from the list
-            string questionObj = _prompts[rand.Next(_prompts.Count)];
-            Console.WriteLine(questionObj);
-            getPauseCounter(5);
-            
-        }    
-        getEndMsg();
+        
+        //my list type is a string. And it is a random string from the list
+        string questionObj = _prompts[rand.Next(_prompts.Count)]; //selects a random prompt
+        Console.WriteLine(questionObj); //display prompt
+        getPauseCounter(5); //5 sec countdown before going on
+        //userInput();       
     }
 
     string input = "";
     int counter = 0;
     public void userInput()
     {
-        input = Console.ReadLine();
-        counter ++;
+        DateTime futureTime = getDuration(_duration);
+
+        while (DateTime.Now <= futureTime)
+        {
+            Console.WriteLine("List one: "); //prompt user
+            input = Console.ReadLine(); //collect user input
+            counter ++;
+        } 
+
+        Console.WriteLine($"You have made {counter} amount of entries.");
+
+        getEndMsg();
 
     }
             
-
-    public void displayList()
-    {
-        Console.WriteLine("You have made {} amount of entries.");
-
-    }
 
 }
