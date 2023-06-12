@@ -12,7 +12,7 @@ class Activity
         Console.WriteLine($"Welcome to the {_activityName} activity.");
         Console.WriteLine($"This activity will help you {_activityDescription}");
         Console.WriteLine();
-        Console.WriteLine("How long, in seconds, would you like for your activity?  ");
+        Console.Write("How long, in seconds, would you like for your activity?  ");
         _duration = int.Parse(Console.ReadLine());
 
         Console.Clear(); //clears the screen as program runs as example in video
@@ -52,7 +52,7 @@ class Activity
     public void getPauseCounter(int duration)
     {
         //for (int i=5; i>0; i--)
-        for (int i = duration; i > 1; i--) 
+        for (int i = duration; i > -1; i--) 
         {
             Console.Write(i.ToString().PadLeft(2)); //conver to string & then set a padding...set how many spaces
             Thread.Sleep(1000);                     //was getting error with the "/b /b" or variation double.

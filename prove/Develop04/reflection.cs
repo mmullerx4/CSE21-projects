@@ -10,7 +10,7 @@ class Reflection : Activity
         "Think of a time when you did something truly selfless"
     };
     private Random rand = new Random(); //using the "Random" building class for both variables
-    private List<string> _question = new List<string>() //creating the variable prompts in list format
+    private List<string> _question = new List<string> //creating the variable prompts in list format
     {
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
@@ -19,7 +19,7 @@ class Reflection : Activity
         "What made this time different than other times when you were not as successful?",
         "What is your favorite thing about this experience?",
         "What could you learn from this experience that applies to other situations?",
-        "What did you learn about yourself through this experience",
+        "What did you learn about yourself through this experience?",
         "How can you keep this experience in mind in the future?"
     };
 

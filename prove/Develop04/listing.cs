@@ -5,7 +5,7 @@ class Listing : Activity
     //Attributes
     private Random rand = new Random();
 
-    private List<string> _prompts = new List<string>()
+    private List<string> _prompts = new List<string>
     {
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
@@ -36,7 +36,7 @@ class Listing : Activity
         string questionObj = _prompts[rand.Next(_prompts.Count)]; //selects a random prompt
         Console.WriteLine(questionObj); //display prompt
         getPauseCounter(5); //5 sec countdown before going on
-        //userInput();       
+        userInput();       
     }
 
     string input = "";
@@ -52,11 +52,10 @@ class Listing : Activity
             counter ++;
         } 
 
-        Console.WriteLine($"You have made {counter} amount of entries.");
+        Console.WriteLine($"You have made {counter} entries.");
 
         getEndMsg();
 
     }
-            
-
+        
 }

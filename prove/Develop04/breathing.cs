@@ -22,10 +22,10 @@ class Breathing : Activity
         while (DateTime.Now <= futureTime)
         {
             Console.Write("Breath in..."); //declare parameters in Activity
-            getPauseCounter(4);
+            getPauseCounter(5);
             Console.WriteLine();
             Console.Write("Breath out...");
-            getPauseCounter(6);
+            getPauseCounter(8);
             Console.WriteLine();
 
         }
