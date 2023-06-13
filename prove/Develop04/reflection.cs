@@ -5,9 +5,9 @@ class Reflection : Activity
     private List<string> _prompts = new List<string>() //creating the variable prompts in list format
     {
         "Think of a time when you stood up for someone else.",
-        "Think of a time when you did something really difficult",
+        "Think of a time when you did something really difficult.",
         "Think of a time when you helped someone in need.",
-        "Think of a time when you did something truly selfless"
+        "Think of a time when you did something truly selfless."
     };
     private Random rand = new Random(); //using the "Random" building class for both variables
     private List<string> _question = new List<string> //creating the variable prompts in list format
