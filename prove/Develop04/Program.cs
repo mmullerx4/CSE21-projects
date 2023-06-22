@@ -2,7 +2,7 @@ using System;
 
 class Program
 {   
-    //minimal information here
+    //try to keep minimal information here in the program.cs file
     static void Main(string[] args)
     {
         while(true)

@@ -25,16 +25,21 @@ class Goal
 
     }
 
-    
 
-    public void recordEvent()
+    public void displayGoals()
     {
+         int _goalNum = 0;
+         string _blankCheck = "[ ]";
+         string _check = "[x]";
 
-    }
-
-    public void showGoals()
-    {
-
+        if (_isComplete == false)
+        {
+            Console.Write($"{_goalNum} {_blankCheck} ({_description})");
+        }
+        else
+        {
+            Console.Write($"{_goalNum} {_check} ({_description})");
+        }
     }
 
     public void saveToFile()
@@ -47,11 +52,16 @@ class Goal
 
     }
 
+    public void recordEvent()
+    {
+
+    }
+
 
 
     public virtual void isComplete()
     {
-        Console.Write($"")
+        
         
         
     }
