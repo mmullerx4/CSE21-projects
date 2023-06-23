@@ -1,0 +1,2 @@
+0
+EternalGoal,eternal,description,50,False

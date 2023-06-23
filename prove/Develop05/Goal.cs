@@ -1,21 +1,23 @@
 using System;
 
-class Goal
+abstract class Goal
 {
     protected string _type;
     protected string _name;
     protected string _description;
     protected int _points;
 
+    protected static int _totalPoints; //static means only one copy not for each file or instance
+
     protected bool _isComplete = false;
 
     public Goal()
     {
-        Console.WriteLine("What is the name of your goal? ");
+        Console.Write("What is the name of your goal? ");
         _name = Console.ReadLine();
-        Console.WriteLine("What is a short description of your goal? ");
+        Console.Write("What is a short description of your goal? ");
         _description = Console.ReadLine();
-        Console.WriteLine("What will be the number of points for this goal? ");
+        Console.Write("What will be the number of points for this goal? ");
         _points = Convert.ToInt16(Console.ReadLine());
 
     }
@@ -26,7 +28,7 @@ class Goal
     }
 
 
-    public void displayGoals(int goalNum)
+    public virtual void displayGoals(int goalNum) //naming a new variable needed for this method to complete the action
     {
          
          string _blankCheck = "[ ]";
@@ -35,18 +37,20 @@ class Goal
 
         if (_isComplete == false)
         {
-            Console.Write($" {_blankCheck} ({_description})");
+            Console.WriteLine($" {goalNum}. {_name} {_blankCheck} ({_description})");
         }
         else
         {
-            Console.Write($"{goalNum} {_check} ({_description})");
+            Console.WriteLine($"{goalNum}. {_name} {_check} ({_description})");
         }
-    }
 
-    public void saveToFile()
-    {
 
     }
+
+    public abstract string GetStringRepresentation(); //abstract means everyone will be different with a string for saving in the file
+    
+
+    
 
     public void loadToFile()
     {

@@ -11,6 +11,11 @@ class SimpleGoal : Goal
         
 
     }
+    public override string GetStringRepresentation()
+    {
+        //SimpleGoal,name,description,points,False
+        return $"SimpleGoal,{_name},{_description},{_points},{_isComplete}";
+    }
 
     public override void isComplete()
     {
