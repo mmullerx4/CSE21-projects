@@ -26,19 +26,20 @@ class Goal
     }
 
 
-    public void displayGoals()
+    public void displayGoals(int goalNum)
     {
-         int _goalNum = 0;
+         
          string _blankCheck = "[ ]";
          string _check = "[x]";
 
+
         if (_isComplete == false)
         {
-            Console.Write($"{_goalNum} {_blankCheck} ({_description})");
+            Console.Write($" {_blankCheck} ({_description})");
         }
         else
         {
-            Console.Write($"{_goalNum} {_check} ({_description})");
+            Console.Write($"{goalNum} {_check} ({_description})");
         }
     }
 

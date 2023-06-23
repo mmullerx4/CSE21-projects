@@ -17,6 +17,7 @@ class Program
             Console.WriteLine("Menu options:");
             Console.Write("1. Create New Goal \n 2. List Goals \n 3. Save Goals \n 4. Load Goals \n 5. Record Event \n 6. Quit \n");
             Console.WriteLine("Select a choice from the menu: ");
+            menuChoice = Convert.ToInt16(Console.ReadLine());
 
             switch (menuChoice)
             {
@@ -57,10 +58,11 @@ class Program
                         //goal.displayGoals();
                         //i++;
                     //}
-                    for (int i =1; i<= 1000; i++)
+                    for (int i =0; i < goals.Count; i++)
                     {
-                        Console.WriteLine(i);
-                        goals.displayGoals();
+                        
+                        goals[i].displayGoals(i + 1);
+                        
                     }
                     break;
 
