@@ -3,11 +3,17 @@ using System;
 class CheckListGoal : Goal
 {
     private int _bonusPoints;
-    private int _numCompleted;
+    private int _numCompleted = 0;
     private int _totalToComplete;
 
-    public CheckListGoal()
+    public CheckListGoal(string name,string description,int points,int bonusPoints,int numCompleted, int totalToCompleted)
     {
+        _name = name;
+        _description = description;
+        _points = points;
+        _bonusPoints = bonusPoints;
+        _numCompleted = numCompleted;
+        _totalToComplete = totalToCompleted;
 
     }
 
@@ -41,7 +47,8 @@ class CheckListGoal : Goal
    public override string GetStringRepresentation()
     {
         //SimpleGoal,name,description,points,False
-        return $"SimpleGoal,{_name},{_description},{_points},{_isComplete},{_bonusPoints},{_numCompleted},{_totalToComplete}";
+        
+        return $"CheckListGoal,{_name},{_description},{_points},{_bonusPoints},{_numCompleted},{_totalToComplete}";
     }
     public override void isComplete()
     {

@@ -13,12 +13,7 @@ abstract class Goal
 
     public Goal()
     {
-        Console.Write("What is the name of your goal? ");
-        _name = Console.ReadLine();
-        Console.Write("What is a short description of your goal? ");
-        _description = Console.ReadLine();
-        Console.Write("What will be the number of points for this goal? ");
-        _points = Convert.ToInt16(Console.ReadLine());
+       
 
     }
 
@@ -44,18 +39,11 @@ abstract class Goal
             Console.WriteLine($"{goalNum}. {_name} {_check} ({_description})");
         }
 
-
     }
 
-    public abstract string GetStringRepresentation(); //abstract means everyone will be different with a string for saving in the file
-    
+    public abstract string GetStringRepresentation();
+    //abstract means every file will be different with a string for saving in the file 
 
-    
-
-    public void loadToFile()
-    {
-
-    }
 
     public void recordEvent()
     {
@@ -66,7 +54,6 @@ abstract class Goal
 
     public virtual void isComplete()
     {
-        
         
         
     }
