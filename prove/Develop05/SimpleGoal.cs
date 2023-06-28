@@ -18,10 +18,11 @@ class SimpleGoal : Goal
         return $"SimpleGoal,{_name},{_description},{_points},{_isComplete}";
     }
 
-    public override void isComplete()
+    public override void recordEvent(ref int _totalPoints)
     {
-
-
+        _totalPoints += _points;    
     }
+
+    
 
 }

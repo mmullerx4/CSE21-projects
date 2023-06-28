@@ -10,15 +10,7 @@ class EternalGoal : Goal
 
     }
 
-    public void recordProgress()
-    {
-
-    }
-
-    public void calcNumOfTimes()
-    {
-
-    }
+   
 
    public override string GetStringRepresentation()
     {
@@ -26,8 +18,10 @@ class EternalGoal : Goal
         return $"EternalGoal,{_name},{_description},{_points}";
     }
 
-    public override void isComplete()
+    public override void recordEvent(ref int _totalPoints)
     {
-
+        _totalPoints += _points;
+        
     }
+
 }

@@ -15,8 +15,7 @@ class Program
         //Breathing breathing = new Breathing(); ---list variation 
         List<Goal> goals = new List<Goal>();
         //goals = goals in the list
-
-
+        int _totalPoints = 0; //needs to be here as a local variable
 
         int menuChoice = 1;
 
@@ -79,6 +78,7 @@ class Program
                         //goal.displayGoals();
                         //i++;
                     //}
+                    //index
                     for (int i =0; i < goals.Count; i++) //less than the count of the list
                     {
                         
@@ -89,20 +89,18 @@ class Program
 
                 case 3: //save
                     //saveGoal.saveToFile();
-                    Console.WriteLine("Your goal is saved.");
+                    Console.WriteLine("Your goal/s is saved.");
                     string fileName = "myFile.txt"; //local variable name of file
                     using (StreamWriter outputFile = new StreamWriter(fileName))//StreamWriter creates a file
                     {               //this will write to the file myFile.txt
                         //foreach(string goal in goals)
-                        for(int i = 0; i < goals.Count; i++) //for each goal in the list
+                        outputFile.WriteLine(_totalPoints); //this writes in the total points to the file
+                        for(int i = 0; i < goals.Count; i++) //for each goal in the list 
                         {
                             goals[i].GetStringRepresentation(); //creating the string
                             outputFile.WriteLine(goals[i].GetStringRepresentation()); //adding the string to the file
-                        }      
-
-                    }
-                    
-                    
+                        } 
+                    }       
                     break;
 
                 case 4: //load
@@ -111,15 +109,16 @@ class Program
                     
                     string [] lines = System.IO.File.ReadAllLines("myFile.txt"); //calling my file as a string("")
                         // must have "using System.IO;" at the top of this file.
-                    foreach (string line in lines)
+
+                    for (int i =1; i < lines.Length; i++) //using a loop with the above variable to go through each 
+                                                //line and a switch statement to act on the goal type
                     {
-                        string[] parts = line.Split(",");
+                        string[] parts = lines[i].Split(","); //use variable lines (the file) 1from line 109 pointing to index for content
 
                         string type = parts[0];
                         string name = parts[1];
                         string description = parts[2];
-                        int points = Convert.ToInt16(parts[3]);
-                        
+                        int points = Convert.ToInt16(parts[3]);                  
 
                         switch (type)
                         {
@@ -143,28 +142,45 @@ class Program
                             CheckListGoal checkListGoal = new CheckListGoal(name,description,points,bonusPoints,numCompleted,totalToComplete); //naming the variable and calling the constructor all in one
                             goals.Add(checkListGoal);
                             break;
-
-
                         }
-
-
                     }
-    
-                break;
+                    Console.WriteLine("Your goal/s have been loaded");
+                break; //the break for case 4
 
                 case 5: 
-                    //simple change boolean to true and give points
+                    //recordGoal.recordEvent();
+
+                    //simple change boolean to true and give points which is done in the recordEvent()
                     //eternal give points
                     //checklist add 1 to complete, give points, and give bonus points if complete.
-                    //record a goal
+        
                     //Goal recordGoal = new Goal();
-                    //recordGoal.recordEvent();
+                    
+                   for (int i =0; i < goals.Count; i++) //less than the count of the list
+                    {
+                        
+                        goals[i].displayGoals(i + 1); //displaying the goals but adding 1 to my "i" variable
+                                         
+                    }
+                    
+
+                    Console.WriteLine("What is the goal you have accomplished? ");
+                    int accomplishedGoal = Convert.ToInt16(Console.ReadLine()); //taking the user input and this is my index #
+                    goals[accomplishedGoal - 1].recordEvent(ref _totalPoints); //use the index selection# and calling the record event
+                    //this uses polymorphism with the selected index to call the appropriate child record event.
+                    //because the particular index is already recorded as a type
+
+                    //variables not available from Goals to program.cs because not a child of
+                    //so use a getter
+                    Console.WriteLine($"Congratulations, you have earned {goals[accomplishedGoal - 1]} points"); //using this to get getter
+                    Console.WriteLine($"Your total score is {_totalPoints}"); //i only exists in the for loop so use index 0.
+                    //so if we go to index 0 which always the first goal in the list
+                    //any goal page has access to the base which has our static attribute _totalPoints
+                    //so using this index and pointing to our method gets our total points
                     break;
 
                 case 6:
                     break;
-
-
             }
         
         }

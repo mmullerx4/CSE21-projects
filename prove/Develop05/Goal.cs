@@ -5,20 +5,17 @@ abstract class Goal
     protected string _type;
     protected string _name;
     protected string _description;
-    protected int _points;
+    protected int _points; //this cannot be static because each children will have different copy of points
 
-    protected static int _totalPoints; //static means only one copy not for each file or instance
+    //protected static int _totalPoints; //static variable means only one copy not for each file or instance
+    //this allows for all instances to be added or totaled
+    //but this needs to move to the program.cs as a local variable in order to fix the goals index as not exist
 
     protected bool _isComplete = false;
 
-    public Goal()
+    public Goal() //constructor is not needed here. Could be deleted.
     {
        
-
-    }
-
-    public void totalScore()
-    {
 
     }
 
@@ -44,20 +41,17 @@ abstract class Goal
     public abstract string GetStringRepresentation();
     //abstract means every file will be different with a string for saving in the file 
 
+    public abstract void recordEvent(ref int _totalPoints); //ref allows to access and modify from program.cs
 
-    public void recordEvent()
+    public int GetPoints()
     {
-
+        return _points;       
     }
 
-
-
-    public virtual void isComplete()
-    {
+    //public virtual void isComplete()
+    //{
         
         
-    }
-
-
+   // }
 
 }

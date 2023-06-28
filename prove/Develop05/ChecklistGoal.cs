@@ -17,15 +17,7 @@ class CheckListGoal : Goal
 
     }
 
-    public void recordPartialGoal()
-    {
-
-    }
-
-    public void bonusGoalComplete()
-    {
-
-    }
+   
 
     public override void displayGoals(int goalNum)
     {
@@ -50,8 +42,17 @@ class CheckListGoal : Goal
         
         return $"CheckListGoal,{_name},{_description},{_points},{_bonusPoints},{_numCompleted},{_totalToComplete}";
     }
-    public override void isComplete()
+
+    public override void recordEvent(ref int _totalPoints)
     {
 
+        _totalPoints += _points;
+        _numCompleted += 1; //adds one each time the user enters a step completion
+
+        if (_numCompleted == _totalToComplete)
+        {
+            _totalPoints += _bonusPoints;
+        }    
     }
+    
 }
