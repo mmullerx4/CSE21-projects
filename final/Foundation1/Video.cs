@@ -2,15 +2,20 @@ using System;
 
 class Video
 {
-    string _title;
-    string _ author;
-    int _length; //in seconds
-    List<Comment> customerList = new List<Comment>();//declaring list and initializing with the " = ????" ". ()" for a new
+    string _videoTitle;
+    string _videoAuthor;
+    int _videoLength; //in seconds
+    List<Comment> customerComment = new List<Comment>();//declaring list and initializing with the " = ????" ". ()" for a new
 
 
     void nameOfComment()
     {
         
+    }
+
+    void Display()
+    {
+       Console.WriteLine($"{_videoTitle} {_videoAuthor} {_videoLength}"); 
     }
     
 }
