@@ -2,20 +2,30 @@ using System;
 
 class Video
 {
-    string _videoTitle;
-    string _videoAuthor;
-    int _videoLength; //in seconds
-    List<Comment> customerComment = new List<Comment>();//declaring list and initializing with the " = ????" ". ()" for a new
+    public string _videoTitle;
+    public string _videoAuthor;
+    public int _videoLength; //in seconds
+    public List<Comment> customerComment = new List<Comment>();//declaring list and initializing with the " = ????" ". ()" for a new
 
 
-    void nameOfComment()
+    public int numOfComments()
     {
+        return customerComment.Count;     
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"The number of comments: {numOfComments()}");
+    //foreach (Video video in videos)
         
+       foreach (Comment comment in customerComment) //data type is "Comment" ...because my classes are datatypes
+       {
+        Console.WriteLine($"Video Title: {_videoTitle} Video Author: {_videoAuthor} Video Length: {_videoLength} sec.");
+        Console.WriteLine(comment.textComment());
+        Console.WriteLine();
+       }
+       
+    
     }
 
-    void Display()
-    {
-       Console.WriteLine($"{_videoTitle} {_videoAuthor} {_videoLength}"); 
-    }
-    
 }

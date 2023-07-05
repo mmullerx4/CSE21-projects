@@ -1,20 +1,18 @@
 using System;
 
 class Comment{
-    string _personName;
+    public string _personName;
+    public string _textComment;
 
-    string textComment()
+
+    public string textComment()
     {
-        
+        return _textComment;    
     }
 
-    void Display()
+    public string Display()
     {
-        Console.WriteLine($"Name: {_personName}");
-        
-        foreach ()
-        {
+        return $"Name: {_personName}";
+    }
             
-        }
-    }
 }
