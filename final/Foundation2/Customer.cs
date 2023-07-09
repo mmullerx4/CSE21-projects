@@ -13,7 +13,7 @@ class Customer
 
     }
 
-    public void bool GetIsUSA() //call a method on the address to find
+    public bool GetIsUSA() //call a method on the address to find
     {
         
     }

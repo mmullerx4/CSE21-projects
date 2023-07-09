@@ -12,11 +12,22 @@ class Program
     static void Main(string[] args)
     {
         Product product1 = new Product("wrench", 01, 20.00, 2);
-        Product product2 = new Product("hammer", 01, 15.00, 3);
+        Product product2 = new Product("hammer", 02, 15.00, 3);
         Address address1 = new Address("10 Sweet", "Pinckney", "MI", "USA");
         Customer customer1 = new Customer("Bill Smith", address1);
         Order order1 = new Order(customer1);
 
         order1.addProduct(product1);
+        order1.addProduct(product2);
+
+
+        Product product3 = new Product("flathead", 03, 20.00, 2);
+        Product product4 = new Product("mallet", 04, 15.00, 3);
+        Address address2 = new Address("20 Jellybean Way", "Fowlerville", "MI", "USA");
+        Customer customer2 = new Customer("Jack Jones", address2);
+        Order order2 = new Order(customer1);
+
+        order1.addProduct(product3);
+        order1.addProduct(product4);
     }
 }

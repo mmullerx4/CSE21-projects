@@ -15,13 +15,15 @@ class Address{
         _country = country;
     }
 
-    public void bool GetIsUSA()
+    public bool GetIsUSA()
     {
 
     }
 
-    public void string combineAddress()
+    public void combineAddress()
     {
-        
+        Console.WriteLine("_streetAddress");
+        Console.WriteLine($"{_city}, {_provState}");
+        Console.WriteLine("_country");
     }
 }

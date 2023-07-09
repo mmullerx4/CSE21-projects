@@ -12,16 +12,26 @@ class Order
 
     public int calcTotalCost() //sum of products + shipping... if USA $5 and other $35
     {
-
+        foreach (Order in orders)
+        {
+            return
+        }
     }
 
     public string GetPackList() //name of product and id for each
     {
-
+        foreach (Order in orders)
+        {
+            return 
+        }
     }
 
     public string GetShipLabel() //name & address of customer
     {
+        foreach (Order in orders)
+        {
+            
+        }
         
     }
 
