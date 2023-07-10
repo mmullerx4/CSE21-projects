@@ -10,7 +10,7 @@ class Lecture
 
     }
 
-    public override void fullDetails()
+    public override void fullDetails() //include speaker name and capacity
     {
         
     }

@@ -14,12 +14,12 @@ class Outdoor
 
     }
 
-    public override void fullDetails()
+    public override void fullDetails() //include statement of weather.
     {
         
     }
 
-    public override void shortDesc()
+    public override void shortDesc() //list type of event, title, and date
     {
         
     }

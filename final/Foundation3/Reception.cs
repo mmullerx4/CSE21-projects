@@ -10,7 +10,7 @@ class Reception
 
     }
 
-    public override void fullDetails()
+    public override void fullDetails() //includes email for rsvp
     {
         
     }
@@ -19,3 +19,4 @@ class Reception
     {
         
     }
+}

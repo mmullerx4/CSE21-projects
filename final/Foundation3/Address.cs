@@ -16,17 +16,6 @@ class Address{
         
     }
 
-    public bool GetIsUSA()
-    {
-        if (_country == "USA")
-        {
-            return true;
-        }
-        else{
-            return false;
-        }
-
-    }
 
     public void fullAddress()
     {

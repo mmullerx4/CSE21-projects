@@ -12,10 +12,23 @@ class Customer
         _custAddress = custAddress;
 
     }
-
-    public bool GetIsUSA() //call a method on the address to find
+    
+    public void GetNameAndAddress()
     {
-        
+        Console.WriteLine(_custName);
+        _custAddress.fullAddress(); //is already a console.writeline in address
     }
+
+    public bool countryType() //call a method on the address to find countryType
+    {
+         return _custAddress.GetIsUSA(); 
+    
+    }
+
+     public void GetAddress()
+    {
+        _custAddress.fullAddress();
+    }
+
     
 }

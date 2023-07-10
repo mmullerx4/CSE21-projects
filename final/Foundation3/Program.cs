@@ -6,6 +6,8 @@ using System;
 //This program helps to organize market events throughout the world
 //track each event and produce marketing material to distribute on social media
 
+//create one event for each type and set values
+
 class Program
 {
     static void Main(string[] args)

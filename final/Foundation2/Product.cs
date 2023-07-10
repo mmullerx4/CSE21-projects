@@ -4,9 +4,9 @@ class Product{
     private string _prodName;
     private int _prodId;
     private double _prodPrice;
-    private double _prodQty;
+    private int _prodQty;
 
-    public Product(string prodName, int prodId, double prodPrice, double prodQty)
+    public Product(string prodName, int prodId, double prodPrice, int prodQty)
     {
         _prodName = prodName;
         _prodId = prodId;
@@ -16,5 +16,10 @@ class Product{
     public double calcQtyPrice() //functions start with verb...multiply price * qty
     {
         return _prodPrice * _prodQty;
+    }
+
+    public string GetNameAndId()
+    {
+        return $"{_prodName} {_prodId}";
     }
 }

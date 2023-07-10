@@ -12,7 +12,7 @@ class event{
 
     }
 
-    public virtual void fullDetails()
+    public virtual void fullDetails() //list all attributes plus type of event and specific
     {
 
     }
