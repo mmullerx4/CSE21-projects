@@ -16,10 +16,11 @@ class Outdoor
 
     public override void fullDetails() //include statement of weather.
     {
+        Console.WriteLine($"The weather is {calcWeather()}");
         
     }
 
-    public override void shortDesc() //list type of event, title, and date
+    public override void shortDesc() 
     {
         
     }

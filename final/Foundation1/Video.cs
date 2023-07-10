@@ -16,7 +16,6 @@ class Video
     public void Display()
     {
         Console.WriteLine($"The number of comments: {numOfComments()}");
-    //foreach (Video video in videos)
         
        foreach (Comment comment in customerComment) //data type is "Comment" ...because my classes are datatypes
        {

@@ -13,10 +13,8 @@ class Program
     {
         Address address1 = new Address("10 Sweet", "Pinckney", "MI", "USA");
         Customer customer1 = new Customer("Bill Smith", address1);
-        
         Product product1 = new Product("wrench", 01, 20.00, 2);
         Product product2 = new Product("hammer", 02, 15.00, 3);
-        
         
         Order order1 = new Order(customer1);
 
@@ -27,12 +25,12 @@ class Program
         order1.calcTotalCost();
         Console.WriteLine();
 
+
+
         Address address2 = new Address("20 Jellybean Way", "Fowlerville", "Alberta", "Canada");
         Customer customer2 = new Customer("Jack Jones", address2);
-        
         Product product3 = new Product("flathead", 03, 20.20, 2);
         Product product4 = new Product("mallet", 04, 25.00, 3);
-       
         
         Order order2 = new Order(customer2);
 
