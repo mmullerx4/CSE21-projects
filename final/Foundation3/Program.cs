@@ -25,16 +25,15 @@ class Program
     //Console.WriteLine();
     static void Main(string[] args)
     {
-        //title, description, date, time, and address
-        Event event001 = new Event("Screen Time Effects", "How screentime effects us", "01/05/24", "1020 Main Street", "Billy", "NC", "USA");
+
+        //Regardless of the type, all events need to have an Event Title, Description, Date, Time, and Address.
+        Event event001 = new Event("Screen Time Effects", "How screentime effects us", "01/05/24", "2:00 p.m.", "101 Event Way, Birmingham MI"); //"int" not needed
+        Address address1 = new Address("10 Sweet", "Pinckney", "MI", "USA");
         Lecture lecture01 = new Lecture();
 
 
 
-        Event event01 = new Event();
-
-
-
+        //Event event002 = new Event();
         Reception reception01 = new Reception();
 
 

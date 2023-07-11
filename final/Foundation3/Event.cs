@@ -4,11 +4,13 @@ class Event
 {
     private string _eventTitle;
     private string _eventDesc;
-    private int _eventDate;
-    private int _eventTime;
+    private string _eventDate; //"int" type not needed
+    private string _eventTime;
     private string _eventAddress;
+    protected string _eventType;
 
-    public Event(string eventTitle, string eventDesc, int eventDate, int eventTime, string eventAddress)
+    
+    public Event(string eventTitle, string eventDesc, string eventDate, string eventTime, string eventAddress)
     {
         _eventTitle = eventTitle;
         _eventDesc = eventDesc;

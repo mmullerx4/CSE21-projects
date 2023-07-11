@@ -10,7 +10,7 @@ class Program
             Console.Write("1. Start breathing activity\n 2. Start reflecting activity\n 3. Start Listing activity\n 4. Quit");
             Console.Write("Select a choice from the menu: ");
 
-            int menuSelection = int.Parse(Console.ReadLine()); //capturing the user's choice
+            int menuSelection = int.Parse(Console.ReadLine()); //get user's choice..Parse method returns the converted number
 
 
             if (menuSelection == 1)

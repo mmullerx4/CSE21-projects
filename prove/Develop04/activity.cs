@@ -6,6 +6,7 @@ class Activity
     protected string _activityName;
     protected string _activityDescription;
 
+
     //using default constructor - no parameters & no body
     public void getStartMsg()
     {
@@ -20,10 +21,10 @@ class Activity
         getPauseSpinner(5);
     }
 
-
-    public void getPauseSpinner(int duration)
+    public void getPauseSpinner(int duration) //have to plug in duration for this method to work
     {
         DateTime futureTime = getDuration(5);
+
         List<string> animationStrings = new List<string>(); //creating a list variable animationStrings
         animationStrings.Add("|"); //adding an object to the list
         animationStrings.Add("/");
@@ -31,11 +32,11 @@ class Activity
         animationStrings.Add("\\");
   
 
-        while (DateTime.Now <= futureTime)
+        while (DateTime.Now <= futureTime) //see line 26
         {
             foreach (string s in animationStrings) //looping the following task
             {
-                Console.Write(s); //printing an object
+                Console.Write(s); //printing an object (linen29-32)
                 Thread.Sleep(250); //in second timing
                 Console.Write("\b \b"); //printing within the same space with the timing above
             }
@@ -58,7 +59,6 @@ class Activity
             Thread.Sleep(1000);                     //was getting error with the "/b /b" or variation double.
             Console.Write("\b\b"); //getting rid of print in the space
         }
-
     }
 
     public void getEndMsg()
@@ -68,5 +68,4 @@ class Activity
         Console.WriteLine($"You have completed {_duration} seconds of the {_activityName} activity.");
         getPauseSpinner(5);
     }
-
 }

@@ -12,14 +12,13 @@ class Listing : Activity
         "Who are people that you have helped this week?",
         "When have you felt the Holy Ghost this month?",
         "Who are some of your personal heroes?"
-    };
+    }; //";" ends objects in list "{}" contains list objects
 
     //construtor
-    public Listing()
+    public Listing() //no parameters needed because values listed below
     {
         _activityName = "listing";
         _activityDescription = "reflect on the good things in your life by having you list as many things as you can in a certain area.";
-
     }
 
 // This file needs to select a random prompt to show user
@@ -28,7 +27,7 @@ class Listing : Activity
 //display items back to user    
     
     //methods
-    public void randomPrompt()
+    public void randomPrompt() //a new randomPrompt method specific for this file
     {   
         getStartMsg();
         
@@ -48,14 +47,12 @@ class Listing : Activity
         while (DateTime.Now <= futureTime)
         {
             Console.WriteLine("List one: "); //prompt user
-            input = Console.ReadLine(); //collect user input
-            counter ++;
+            input = Console.ReadLine(); //collect user input by first declaring variable outside of loop
+            counter ++; //declare this variable outside of loop first
         } 
 
         Console.WriteLine($"You have made {counter} entries.");
 
         getEndMsg();
-
-    }
-        
+    }     
 }

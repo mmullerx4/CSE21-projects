@@ -7,7 +7,7 @@ class Breathing : Activity
     //alternating messages of breath in and breathe out with a pause until time up
 
 
-    public Breathing()
+    public Breathing() //parameters not needed because value enetered on line 13 & 14
     {
         //give the attributes a value to retrieve
         _activityName = "Breathing";
@@ -16,7 +16,7 @@ class Breathing : Activity
 
     public void alternateBreath()
     {
-        getStartMsg();
+        getStartMsg(); //calling method from activity file
         DateTime futureTime = getDuration(_duration);
 
         while (DateTime.Now <= futureTime)
@@ -30,8 +30,6 @@ class Breathing : Activity
 
         }
 
-        getEndMsg();
-
+        getEndMsg(); //calling method from activity file
     }
-
 }
