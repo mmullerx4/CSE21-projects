@@ -10,7 +10,7 @@ class Entry
     public void writeEntry() 
     {
 
-    string[] _randomPrompt = new string[5] {             //creating an array for random prompt
+    string[] _randomPrompt = new string[5] {             //creating an array for random prompt of 5 objects
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
         "How did I see the hand of the Lord in my life today?",
@@ -23,7 +23,7 @@ class Entry
     _randomValue = _randomPrompt[rand.Next(0, _randomPrompt.Length)]; //storing a variable based on someone else's code
     Console.WriteLine(_randomValue);
 
-    _userResponse = Console.ReadLine(); //not creating the variable but referencing the variable
+    _userResponse = Console.ReadLine(); //referencing the variable and collecting info in variable
 
     DateTime theCurrentTime = DateTime.Now; 
     _entryDate = theCurrentTime.ToShortDateString();                                       

@@ -7,7 +7,7 @@ class Word{
 
    // (Access Type) (Name(Paramters))
    //public Word(){}   //this would be the default constructor
-   public Word(string word)
+   public Word(string word) //no isHidden here because setting a value on line 13
    {
       _word = word;
       _isHidden = false; //false because starts out as not hidden

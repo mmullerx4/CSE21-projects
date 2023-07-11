@@ -6,6 +6,8 @@ class Journal //class is a blueprint on how to create Journal
     string journalFileName; //declaring variable
     
     public List<Entry> entryCollection = new List<Entry>();//declaring list and initializing with the " = ????" ". ()" for a new class
+    
+    
     public void displayJournal() //creating a method(an action) from List<Entry> but no return
    { 
         
@@ -32,14 +34,13 @@ class Journal //class is a blueprint on how to create Journal
 
    }
    
-
    public void loadJournal() //just loading
    {
-        List <Entry> Entry = new List<Entry>(); //adding a new list entry to a list of entries.
+        List <Entry> Entry = new List<Entry>(); //adding a new list entry object to a list of entries.
         Console.Write("What is the name of your file? ");
         string filename = Console.ReadLine(); // storing user's input in "filename" variable 
         string [] lines = System.IO.File.ReadAllLines(filename); //storing all lines in "lines" array. IO is Input/Output
-                        // must have "using System.IO;" at the top of this file.
+                        // must have "using System.IO;" at the top of this file for this code.
    }
    
 }
