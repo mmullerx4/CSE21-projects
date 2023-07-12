@@ -5,26 +5,18 @@ class Lecture
     private string _eventSpeaker;
     private string _eventCapacity;
 
-    public override void standardDetails()
+    //constructor
+    public Lecture()
     {
-
+        _eventType = "Event type: Lecture";
     }
 
-    public override void fullDetails() //include speaker name and capacity
+
+    public override void addToFullLecture()
     {
-        Console.WriteLine(_eventTitle);
-        Console.WriteLine(_eventDesc);
-        Console.WriteLine(_eventDate);
-        Console.WriteLine(_eventTime);
-        Console.WriteLine(_eventAddress);
-        Console.WriteLine(_eventType);
+        fullDetails();
         Console.WriteLine(_eventSpeaker);
         Console.WriteLine(_eventCapacity);
-        
     }
 
-    public override void shortDesc()
-    {
-        
-    }
 }

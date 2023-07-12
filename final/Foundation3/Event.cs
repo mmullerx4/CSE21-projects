@@ -19,7 +19,7 @@ class Event
         _eventAddress = eventAddress;
     }
 
-    public virtual void standardDetails() //Lists the title, description, date, time, and address
+    public void standardDetails() //Lists the title, description, date, time, and address
     {
         Console.WriteLine(_eventTitle);
         Console.WriteLine(_eventDesc);
@@ -29,7 +29,7 @@ class Event
 
     }
 
-    public virtual void fullDetails() //Lists the title, desc., date, time, and address plus type of event and specifics
+    public void fullDetails() //Lists the title, desc., date, time, and address plus type of event and specifics
     {
         Console.WriteLine(_eventTitle);
         Console.WriteLine(_eventDesc);
@@ -40,7 +40,7 @@ class Event
 
     }
 
-    public virtual void shortDesc() //Lists the type of event, title, and the date
+    public void shortDesc() //Lists the type of event, title, and the date
     {
         Console.WriteLine(_eventType);
         Console.WriteLine(_eventTitle);

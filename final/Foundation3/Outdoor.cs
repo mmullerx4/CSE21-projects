@@ -4,24 +4,23 @@ class Outdoor
 {
     private int _weather;
 
+
+    public Outdoor()
+    {
+         _eventType = "Event type: Outdoor";
+    }
+
     public void calcWeather()
     {
 
     }
 
-    public override void standardDetails()
-    {
 
-    }
-
-    public override void fullDetails() //include statement of weather.
+    public void addToOutdoor() //include statement of weather.
     {
+        fullDetails();
         Console.WriteLine($"The weather is {calcWeather()}");
         
     }
 
-    public override void shortDesc() 
-    {
-        
-    }
 }

@@ -5,19 +5,19 @@ class Reception
     private bool _rsvp;
     private string _register; //email info
 
-   public override void standardDetails()
-    { 
 
+    public Reception()
+    {
+         _eventType = "Event type: Reception";
     }
 
-    public override void fullDetails() //include email for rsvp
+   
+
+    public override void addToReception() //include email for rsvp
     {
+        fullDetails();
         Console.WriteLine($"Email: {_register}");
         
     }
 
-    public override void shortDesc()
-    {
-        
-    }
 }
