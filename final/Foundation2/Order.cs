@@ -19,8 +19,7 @@ class Order
         foreach(Product prodPrice in custProducts) //declare data type first
         {
             prodTotal = prodPrice.calcQtyPrice(); 
-            totalCost += prodTotal;  
-            
+            totalCost += prodTotal;   
         }
 
         if (_customer.countryType() == true) //the customer attribute in this file has the address
@@ -32,10 +31,10 @@ class Order
             {
                 shipping = 35;
             }
+            
         totalCost += shipping;
         Console.WriteLine($"Shipping {shipping}");
-        Console.WriteLine($"Total ${totalCost}");
-        
+        Console.WriteLine($"Total ${totalCost}");     
     }
 
     public void displayPackList() //name of product name and id for each
@@ -43,23 +42,18 @@ class Order
         foreach(Product product in custProducts) //the type of list is Product
         {
             Console.WriteLine(product.GetNameAndId());
-        }
-
-        
+        } 
     }
 
     public void displayShippingLabel() //name & address of customer
     {
         _customer.GetNameAndAddress(); //just calling the display
-
-        
     }
 
    
     public void addProduct(Product product) //making accessible for main on adding products
     {
         custProducts.Add(product);
-
     }
 
 

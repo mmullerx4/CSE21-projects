@@ -1,22 +1,24 @@
 using System;
 
-class Lecture
+class Lecture : Event
 {
     private string _eventSpeaker;
-    private string _eventCapacity;
+    private string _eventCapacity; //no int needed
 
     //constructor
-    public Lecture()
+    public Lecture(string eventTitle, string eventDesc, string eventDate, string eventTime, Address eventAddress, string eventSpeaker, string eventCapacity) : base(eventTitle, eventDesc, eventDate, eventTime, eventAddress)
     {
         _eventType = "Event type: Lecture";
+        _eventSpeaker = eventSpeaker;
+        _eventCapacity = eventCapacity;
     }
 
 
-    public override void addToFullLecture()
+    public void fullDescription()
     {
         fullDetails();
-        Console.WriteLine(_eventSpeaker);
-        Console.WriteLine(_eventCapacity);
+        Console.WriteLine($"Your Lecture speaker is: {_eventSpeaker}");
+        Console.WriteLine($"The Lecture capacity is: {_eventCapacity}");
     }
 
 }

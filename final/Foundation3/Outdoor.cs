@@ -1,26 +1,20 @@
 using System;
 
-class Outdoor
+class Outdoor : Event
 {
-    private int _weather;
+    private string _weather;
 
 
-    public Outdoor()
+    public Outdoor(string eventTitle, string eventDesc, string eventDate, string eventTime, Address eventAddress, string weather) : base(eventTitle, eventDesc, eventDate, eventTime, eventAddress)
     {
          _eventType = "Event type: Outdoor";
-    }
-
-    public void calcWeather()
-    {
-
+         _weather = weather;
     }
 
 
-    public void addToOutdoor() //include statement of weather.
+    public void fullDescription() //include statement of weather.
     {
         fullDetails();
-        Console.WriteLine($"The weather is {calcWeather()}");
-        
+        Console.WriteLine($"The weather is {_weather}"); 
     }
-
 }

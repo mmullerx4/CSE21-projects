@@ -11,19 +11,20 @@ class Program
 {
     static void Main(string[] args)
     {
-        Address address1 = new Address("10 Sweet", "Pinckney", "MI", "USA");
-        Customer customer1 = new Customer("Bill Smith", address1);
-        Product product1 = new Product("wrench", 01, 20.00, 2);
+        Address address1 = new Address("10 Sweet", "Pinckney", "MI", "USA"); //adding values for address
+        Customer customer1 = new Customer("Bill Smith", address1); //adding value name and address in customer is address1
+        Product product1 = new Product("wrench", 01, 20.00, 2); //adding values for product
         Product product2 = new Product("hammer", 02, 15.00, 3);
         
         Order order1 = new Order(customer1);
 
-        order1.addProduct(product1);
+        order1.addProduct(product1); //referriing to list in "order" and using a built in function "add" for 
+                                     //"Product" type of list to add to this list 
         order1.addProduct(product2);
-        order1.displayPackList();
-        order1.displayShippingLabel();
-        order1.calcTotalCost();
-        Console.WriteLine();
+        order1.displayPackList(); //calling this method from order to display packinglist for order 1
+        order1.displayShippingLabel(); //calling this method from order to display shipping for order 1
+        order1.calcTotalCost(); //calling this method from order to display total cost
+        Console.WriteLine(); 
 
 
 
