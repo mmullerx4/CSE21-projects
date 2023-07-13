@@ -21,27 +21,27 @@ class Event
 
     public void standardDetails() //Lists the title, description, date, time, and address
     {
-        Console.WriteLine("Standard Details");
+        Console.WriteLine("\nStandard Details");
         Console.WriteLine(_eventTitle);
         Console.WriteLine(_eventDesc);
         Console.WriteLine(_eventDate);
         Console.WriteLine(_eventTime);
-        _eventAddress;
+        _eventAddress.fullAddress(); //using my local variable calling the method from address
     }
 
     protected void fullDetails() //Lists the title, desc., date, time, and address plus type of event and specifics
     {
-        Console.WriteLine("Full Details");
+        Console.WriteLine("\nFull Details");
         Console.WriteLine(_eventTitle);
         Console.WriteLine(_eventDesc);
         Console.WriteLine(_eventDate);
         Console.WriteLine(_eventTime);
-        Console.WriteLine(_eventAddress);
+        _eventAddress.fullAddress();
     }
 
     public void shortDesc() //Lists the type of event, title, and the date
     {
-        Console.WriteLine("Short Description");
+        Console.WriteLine("\nShort Description");
         Console.WriteLine(_eventType);
         Console.WriteLine(_eventTitle);
         Console.WriteLine(_eventDate);  

@@ -20,5 +20,4 @@ class Lecture : Event
         Console.WriteLine($"Your Lecture speaker is: {_eventSpeaker}");
         Console.WriteLine($"The Lecture capacity is: {_eventCapacity}");
     }
-
 }

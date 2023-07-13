@@ -21,23 +21,30 @@ class Program
         //Order order2 = new Order(customer2);
         //order2.displayShippingLabel();
         lecture01.standardDetails(); //listing different detail options for user
-        lecture01.fullDescription();
-        lecture01.shortDesc();
         Console.WriteLine();
+        lecture01.fullDescription(); //note to not use full details methos here but insert full details within fullDescription so not repeating
+        Console.WriteLine();
+        lecture01.shortDesc();
+        Console.WriteLine("\n");
+        
 
         //Event event002 = new Event();
         Address address02 = new Address("3123 N. Gramer Rd.", "Webberville", "MI", "USA");
         Reception reception01 = new Reception("Thomas Wedding", "Drake and Haley Wedding", "06/22/24", "4:00 p.m.", address02);
         reception01.standardDetails();
-        reception01.fullDescription();
-        reception01.shortDesc();
         Console.WriteLine();
+        reception01.fullDescription();
+        Console.WriteLine();
+        reception01.shortDesc();
+        Console.WriteLine("\n");
 
         Address address03 = new Address("7147 Gawley Rd.", "Pinckney", "MI", "USA" );
-        Outdoor outdoor01 = new Outdoor("Muller Graduation", "BYUI graduation for Melinda Muller", "04/12/25", "1:00 p.m.", address03, "Weather forcast is Sunny and 80 degrees");
+        Outdoor outdoor01 = new Outdoor("Muller Graduation", "BYUI graduation for Melinda Muller", "04/12/25", "1:00 p.m.", address03, "Sunny and 80 degrees");
         outdoor01.standardDetails();
-        outdoor01.fullDescription();
-        outdoor01.shortDesc();
         Console.WriteLine();
+        outdoor01.fullDescription();
+        Console.WriteLine();
+        outdoor01.shortDesc();
+        Console.WriteLine("\n");
     }
 }

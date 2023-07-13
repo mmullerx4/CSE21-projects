@@ -15,6 +15,6 @@ class Outdoor : Event
     public void fullDescription() //include statement of weather.
     {
         fullDetails();
-        Console.WriteLine($"The weather is {_weather}"); 
+        Console.WriteLine($"The weather forcast is {_weather}"); 
     }
 }
