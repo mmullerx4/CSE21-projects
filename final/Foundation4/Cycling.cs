@@ -1,27 +1,30 @@
 using System;
 
-class Cycling
+class Cycling : Activity
 {
-    private int _speed;
+    private double _speed;
 
-     public override void GetDistance()
+    
+    public Cycling(string date, double minutes, int speed) : base(date, minutes)
     {
-
+        _speed = speed;
+        _activity = "Cycling";
     }
 
-    public override void GetSpeed() // miles per hour
+    public override double GetDistance()
     {
-
+        return (_speed / _length) * 60;
     }
 
-    public override void GetPace() //min per mile
+    public override double GetSpeed() // miles per hour
     {
-
+        //Speed (mph or kph) = (distance / minutes) * 60
+        return (_distance / _length) * 60;
     }
 
-    public override void GetSummery()
+    public override double GetPace() //min per mile
     {
-        
-    }
+        //Pace (min per mile or min per km)= minutes / distance
 
+    }
 }

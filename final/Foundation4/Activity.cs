@@ -1,39 +1,38 @@
 using System;
 
-class Activity
+abstract class Activity //really only a parent class can be abstract
 {
-    private int _date;
-    private int _length;
-    List<Activity> activityList = new List<Activity>(); //declaring attribute and initializing
+    private string _date;
+    protected double _minutes;
+    protected string _activity;
 
-    
-    //Distance (km) = swimming laps * 50 / 1000
-    //Distance (miles) = swimming laps * 50 / 1000 * 0.62
-    //Speed (mph or kph) = (distance / minutes) * 60
-    //Pace (min per mile or min per km)= minutes / distance
-    //Speed = 60 / pace
-    //Pace = 60 / speed
 
-    public virtual void GetDistance()
+    public Activity(string date, double minutes)
     {
-        return distance = speed * time;
-
+        _date = date;
+        _minutes = minutes;
     }
 
-    public virtual int GetSpeed() // miles per hour
+
+    //the base class should contain virtual methods for getting the distance, speed, pace.
+    //These methods should be overridden in the derived classes.
+    public abstract double GetDistance(); //abstract means put the details or formula in the derived classes
+    //no body needed so use ";"
+       
+
+    public abstract double GetSpeed();
+    //no body needed so use ";"
+
+    public abstract double GetPace();
+    //no body needed so use ";"
+
+
+    //This method should be available for all classes, so it should be defined in the base class
+    //(you can override it in the derived classes if needed, but it may not need to be...).
+    public void GetSummery()
     {
-        return distance / minutes * 60; //mph * minute
+        //03 Nov 2022 Running (30 min)- Distance 3.0 miles, Speed 6.0 mph, Pace: 10.0 min per mile
 
-    }
-
-    public virtual void GetPace() //min per mile
-    {
-        minutes / distance;
-
-    }
-
-    public virtual void GetSummery()
-    {
-        
+        Console.WriteLine($"{_date} {_activity} ({_minutes})- Distance {GetDistance()} miles, Spead {GetSpeed()} mph, Pace: {GetPace()} per mile");
     }
 }
