@@ -11,20 +11,9 @@ class Cycling : Activity
         _activity = "Cycling";
     }
 
-    public override double GetDistance()
+    public override double GetDistance() //if void no one can use it
     {
-        return (_speed / _length) * 60;
+        return (_speed / _minutes) * 60;
     }
 
-    public override double GetSpeed() // miles per hour
-    {
-        //Speed (mph or kph) = (distance / minutes) * 60
-        return (_distance / _length) * 60;
-    }
-
-    public override double GetPace() //min per mile
-    {
-        //Pace (min per mile or min per km)= minutes / distance
-
-    }
 }

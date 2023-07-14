@@ -27,7 +27,6 @@ class Running : Activity
     {
         //Speed (mph or kph) = (distance / minutes) * 60
         return (_distance / _minutes) * 60;
-
     }
 
     public override double GetPace() //min per mile

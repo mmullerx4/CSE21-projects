@@ -20,11 +20,19 @@ abstract class Activity //really only a parent class can be abstract
     //no body needed so use ";"
        
 
-    public abstract double GetSpeed();
-    //no body needed so use ";"
+    public virtual double GetSpeed(){
+        //Speed (mph or kph) = (distance / minutes) * 60
+        return (GetDistance() / _minutes) * 60;
 
-    public abstract double GetPace();
-    //no body needed so use ";"
+    }
+    
+
+    public virtual double GetPace()
+    {
+        //Pace (min per mile or min per km)= minutes / distance
+        return _minutes / GetDistance();
+
+    }
 
 
     //This method should be available for all classes, so it should be defined in the base class
@@ -33,6 +41,6 @@ abstract class Activity //really only a parent class can be abstract
     {
         //03 Nov 2022 Running (30 min)- Distance 3.0 miles, Speed 6.0 mph, Pace: 10.0 min per mile
 
-        Console.WriteLine($"{_date} {_activity} ({_minutes})- Distance {GetDistance()} miles, Spead {GetSpeed()} mph, Pace: {GetPace()} per mile");
+        Console.WriteLine($"{_date} {_activity} ({_minutes} min.)- Distance {GetDistance()} miles, Speed {GetSpeed()} mph, Pace: {GetPace()} per mile");
     }
 }
