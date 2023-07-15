@@ -5,7 +5,7 @@ class Running : Activity
     private double _distance;
 
 
-    public Running(string date, double minutes, int distance) : base(date, minutes)
+    public Running(string date, float minutes, float distance) : base(date, minutes)
     {
         _distance = distance;
         _activity = "Running";

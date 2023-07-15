@@ -5,7 +5,7 @@ class Cycling : Activity
     private double _speed;
 
     
-    public Cycling(string date, double minutes, int speed) : base(date, minutes)
+    public Cycling(string date, float minutes, float speed) : base(date, minutes)
     {
         _speed = speed;
         _activity = "Cycling";

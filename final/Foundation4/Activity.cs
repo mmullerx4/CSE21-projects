@@ -41,6 +41,6 @@ abstract class Activity //really only a parent class can be abstract
     {
         //03 Nov 2022 Running (30 min)- Distance 3.0 miles, Speed 6.0 mph, Pace: 10.0 min per mile
 
-        Console.WriteLine($"{_date} {_activity} ({_minutes} min.)- Distance {GetDistance()} miles, Speed {GetSpeed()} mph, Pace: {GetPace()} per mile");
+        Console.WriteLine($"{_date} {_activity} ({_minutes} min.)- Distance {GetDistance()} miles, Speed {GetSpeed()} mph, Pace: {GetPace()} min. per mile");
     }
 }
