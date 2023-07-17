@@ -16,9 +16,15 @@ abstract class Goal
     public Goal() //constructor is not needed here. Could be deleted.
     {
        
-
     }
 
+    public Goal(string typeInfo) //new constructor naming a parameter anything I want. I choose to call it the same as my info on program
+    {
+        string[] parts = typeInfo.Split(","); //taking the parts of typeInfo and splitting by commas
+        _name = parts[0];
+        _description = parts[1];
+        _points = Convert.ToInt16(parts[2]);
+    }
 
     public virtual void displayGoals(int goalNum) //naming a new variable needed for this method to complete the action
     {
@@ -41,17 +47,13 @@ abstract class Goal
     public abstract string GetStringRepresentation();
     //abstract means every file will be different with a string for saving in the file 
 
-    public abstract void recordEvent(ref int _totalPoints); //ref allows to access and modify from program.cs
-
+    public virtual void recordEvent(ref int _totalPoints) //ref allows to access and modify from program.cs
+    {
+        _totalPoints += _points;
+    }
     public int GetPoints()
     {
         return _points;       
     }
-
-    //public virtual void isComplete()
-    //{
-        
-        
-   // }
 
 }

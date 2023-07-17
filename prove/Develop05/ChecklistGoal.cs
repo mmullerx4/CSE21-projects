@@ -14,10 +14,13 @@ class CheckListGoal : Goal
         _bonusPoints = bonusPoints;
         _numCompleted = numCompleted;
         _totalToComplete = totalToCompleted;
-
     }
 
-   
+    public CheckListGoal(string typeInfo) : base(typeInfo) //calling this constructor for loading
+    {
+        
+    }
+
 
     public override void displayGoals(int goalNum)
     {
@@ -40,7 +43,7 @@ class CheckListGoal : Goal
     {
         //SimpleGoal,name,description,points,False
         
-        return $"CheckListGoal,{_name},{_description},{_points},{_bonusPoints},{_numCompleted},{_totalToComplete}";
+        return $"CheckListGoal:{_name},{_description},{_points},{_bonusPoints},{_numCompleted},{_totalToComplete}";
     }
 
     public override void recordEvent(ref int _totalPoints)

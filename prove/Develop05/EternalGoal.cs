@@ -10,18 +10,16 @@ class EternalGoal : Goal
 
     }
 
-   
+    public EternalGoal(string typeInfo) : base(typeInfo) //calling this constructor for loading
+    {
+        
+    }
 
+   
    public override string GetStringRepresentation()
     {
         //SimpleGoal,name,description,points,False
-        return $"EternalGoal,{_name},{_description},{_points}";
-    }
-
-    public override void recordEvent(ref int _totalPoints)
-    {
-        _totalPoints += _points;
-        
+        return $"EternalGoal:{_name},{_description},{_points}";
     }
 
 }

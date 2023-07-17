@@ -1,6 +1,12 @@
 using System;
 using System.IO;
 
+//Teacher grading feedback...
+//You could handle the code to parse lines from the file using code in the classes as well. The way it is
+//currently written, you require the Program class to manage parsing lines and so any new class requires
+//you to update the Program class. This undermines the goal of polymorphism. 
+
+//parsing is to divide sentence into parts and identify parts
 class Program
 {
     //Note that all information here cannot go in the goal file because this is where we create the goals
@@ -10,13 +16,12 @@ class Program
     static void Main(string[] args)
     {
         // note that inside the main or any function/method you do not use an access modifier (public, private...) with a local variable
-        // sample code for the following...List<Entry> entryCollection = new List<Entry>();
+        // sample code for list...List<Entry> entryCollection = new List<Entry>();
         //List with type  variable  = new list with type
-        //Breathing breathing = new Breathing(); ---list variation 
+        //Breathing breathing = new Breathing(); ---new instance example, now do new instance for list
         List<Goal> goals = new List<Goal>();
         //goals = goals in the list
         int _totalPoints = 0; //needs to be here as a local variable
-
         int menuChoice = 1;
 
         while(menuChoice != 6) 
@@ -35,7 +40,6 @@ class Program
                 Console.Write("\n 1. Simple goal \n 2. Eternal goal \n 3. Check List goal \n");
                 Console.Write("What type of goal would you like to create? ");
 
-                
                 //within a method so don't need class name
                 int goalType = Convert.ToInt16(Console.ReadLine());
                 Console.Write("What is the name of your goal? ");
@@ -48,7 +52,7 @@ class Program
                 if (goalType == 1)
                 {
                     SimpleGoal simpleGoal = new SimpleGoal(_name,_description,_points,false); //naming the variable and calling the constructor all in one
-                    //.entryCollection.Add(entry);
+                    //.entryCollection.Add(entry); code example
                     goals.Add(simpleGoal);
                 }
 
@@ -80,10 +84,8 @@ class Program
                     //}
                     //index
                     for (int i =0; i < goals.Count; i++) //less than the count of the list
-                    {
-                        
-                        goals[i].displayGoals(i + 1); //displaying the goals but adding 1 to my "i" variable
-                        
+                    {   
+                        goals[i].displayGoals(i + 1); //displaying the goals but adding 1 to my "i" variable   
                     }
                     break;
 
@@ -113,33 +115,31 @@ class Program
                     for (int i =1; i < lines.Length; i++) //using a loop with the above variable to go through each 
                                                 //line and a switch statement to act on the goal type
                     {
-                        string[] parts = lines[i].Split(","); //use variable lines (the file) 1from line 109 pointing to index for content
+                        string[] parts = lines[i].Split(":"); //use variable lines (the file) 1from line 109 pointing to index for content
 
                         string type = parts[0];
-                        string name = parts[1];
-                        string description = parts[2];
-                        int points = Convert.ToInt16(parts[3]);                  
+                        string typeInfo = parts[1];
+                        //string description = parts[2];
+                        //int points = Convert.ToInt16(parts[3]);                  
 
                         switch (type)
                         {
-
                             case "SimpleGoal":
-                            bool isComplete = Convert.ToBoolean(parts[4]);
-                            SimpleGoal simpleGoal = new SimpleGoal(name,description,points,isComplete); //naming the variable and calling the constructor all in one
+                            //bool isComplete = Convert.ToBoolean(parts[4]);
+                            SimpleGoal simpleGoal = new SimpleGoal(typeInfo); //naming the variable and calling the constructor all in one
                             goals.Add(simpleGoal);
                             break;
 
                             case "EternalGoal":
-                            EternalGoal eternalGoal = new EternalGoal(name,description,points); //naming the variable and calling the constructor all in one
+                            EternalGoal eternalGoal = new EternalGoal(typeInfo); //naming the variable and calling the constructor all in one
                             goals.Add(eternalGoal);
                             break;
 
                             case "CheckListGoal":
-                            int bonusPoints = Convert.ToInt16(parts[4]);
-                            int numCompleted = Convert.ToInt16(parts[5]);
-                            int totalToComplete = Convert.ToInt16(parts[6]);
-                            
-                            CheckListGoal checkListGoal = new CheckListGoal(name,description,points,bonusPoints,numCompleted,totalToComplete); //naming the variable and calling the constructor all in one
+                            //int bonusPoints = Convert.ToInt16(parts[4]);
+                            //int numCompleted = Convert.ToInt16(parts[5]);
+                            //int totalToComplete = Convert.ToInt16(parts[6]);
+                            CheckListGoal checkListGoal = new CheckListGoal(typeInfo); //naming the variable and calling the constructor all in one
                             goals.Add(checkListGoal);
                             break;
                         }
@@ -157,13 +157,10 @@ class Program
                     //Goal recordGoal = new Goal();
                     
                    for (int i =0; i < goals.Count; i++) //less than the count of the list
-                    {
-                        
-                        goals[i].displayGoals(i + 1); //displaying the goals but adding 1 to my "i" variable
-                                         
+                    {   
+                        goals[i].displayGoals(i + 1); //displaying the goals but adding 1 to my "i" variable                    
                     }
                     
-
                     Console.WriteLine("What is the goal you have accomplished? ");
                     int accomplishedGoal = Convert.ToInt16(Console.ReadLine()); //taking the user input and this is my index #
                     goals[accomplishedGoal - 1].recordEvent(ref _totalPoints); //use the index selection# and calling the record event
@@ -182,7 +179,6 @@ class Program
                 case 6:
                     break;
             }
-        
         }
     }
 }
