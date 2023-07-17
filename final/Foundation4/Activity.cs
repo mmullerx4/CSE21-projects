@@ -31,7 +31,6 @@ abstract class Activity //really only a parent class can be abstract
     {
         //Pace (min per mile or min per km)= minutes / distance
         return _minutes / GetDistance();
-
     }
 
 
